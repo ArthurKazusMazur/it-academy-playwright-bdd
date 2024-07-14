@@ -1,4 +1,4 @@
-Feature: Text form
+Feature: Text Box Page
 
   Background:
     Given User navigates to the TextBoxPage
@@ -14,10 +14,12 @@ Feature: Text form
       | I'm Groot             | email@mail.com     | London, 756-4, str. Colts      | Submit     |
       | John Doe              | mail@mail.com      | New York, str. the 5th Avenue  | Submit     |
       | Takeshi Kitano        | new.email@mail.com | Tokio, 5-26, str. Youkushima   | Submit     |
-# Scenario Outline: Testing text form. Invaild email
-#     When User specifys his data as: <fullName>, <email>, <currentAddress> in the data form
-#     And User clicks <buttonName> button
-#     Then emailInput border should be highlighted with <color>
-# Examples:
-# |fullName              |email              |currentAddress                  | buttonName | color                    |
-# |Dormidont Podoprigora | my.email@mail.com | Paris, 18-24, Picadilly circus | Submit     | 1px solid rgb(255, 0, 0) |
+
+  Scenario Outline: Testing text form. Invaild email
+    When User specifys his data as: "<fullName>", "<email>", "<currentAddress>" in the data form
+    And User clicks "<buttonName>" button
+    Then emailInput border should be highlighted with "<color>"
+
+    Examples:
+      | fullName              | email            | currentAddress                 | buttonName | color                    |
+      | Dormidont Podoprigora | my.emailmail.com | Paris, 18-24, Picadilly circus | Submit     | 1px solid rgb(255, 0, 0) |
